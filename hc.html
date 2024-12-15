@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hacker Login</title>
+  <style>
+    body {
+      background-color: #1e1e1e;
+      color: #00ff00;
+      font-family: 'Courier New', monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    .login-container {
+      background-color: rgba(0, 0, 0, 0.8);
+      border: 2px solid #00ff00;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+      text-align: center;
+      width: 300px;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      color: #00ff00;
+    }
+
+    .input-field {
+      background-color: #1e1e1e;
+      border: 2px solid #00ff00;
+      color: #00ff00;
+      padding: 10px;
+      width: 90%;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .submit-btn {
+      background-color: #00ff00;
+      color: #1e1e1e;
+      border: none;
+      padding: 10px 20px;
+      width: 100%;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .submit-btn:hover {
+      background-color: #00cc00;
+    }
+
+    .input-field::placeholder {
+      color: #00ff00;
+    }
+
+    .console {
+      font-size: 16px;
+      color: #00ff00;
+      margin-top: 10px;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 100%;
+      animation: blink 1s step-end infinite;
+    }
+
+    @keyframes blink {
+      50% {
+        border-right: 2px solid transparent;
+      }
+    }
+
+    .cursor {
+      display: inline-block;
+      background-color: #00ff00;
+      width: 10px;
+      height: 18px;
+      margin-left: 5px;
+      animation: blink 1s step-end infinite;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-container">
+    <h1>System Login</h1>
+    <div>
+    <input class="input-field" type="text" placeholder="Username">
+    <div>
+    <input class="input-field" type="password" placeholder="Password">
+    <button class="submit-btn" onclick="submitForm()">Submit</button>
+
+    <div class="console">
+      <span>Authenticating...</span>
+      <span class="cursor"></span>
+    </div>
+  </div>
+
+  <script>
+    function submitForm() {
+      // Simulate the login process
+      const consoleText = document.querySelector('.console span');
+      consoleText.textContent = 'Login Successful!';
+      setTimeout(() => {
+        window.location.href = "/dashboard"; // Redirect to the dashboard or home page
+      }, 1000);
+    }
+  </script>
+  
+</body>
+</html>
